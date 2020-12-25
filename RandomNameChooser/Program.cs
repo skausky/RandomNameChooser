@@ -9,7 +9,9 @@ namespace RandomNameChooser
     {
         static void Main(string[] args)
         {
-            try
+            bool again = true;
+
+            while (again)
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -22,6 +24,7 @@ namespace RandomNameChooser
 
 
                 }
+                Console.WriteLine(DateTime.Now.ToString("[hh:mm:ss]"), Color.Pink);
 
                 Console.Write("How many names: ", Color.Pink);
                 int amountNames = Convert.ToInt32(Console.ReadLine());
@@ -44,14 +47,23 @@ namespace RandomNameChooser
                 Console.WriteLine($"Picked Name: {names[index]}", Color.Green);
                 string namePicked = Console.ReadLine();
                 Console.ReadLine();
-            }
-            catch
-            {
-                Console.WriteLine("An error occured while picking a random name", Color.Red);
-                Console.ReadLine();
 
+                Console.Write("do you wanna run it again? y/n ");
+                string runAgain = Console.ReadLine();
+
+                if (runAgain == "y")
+                {
+                    again = true;
+                }
+                else
+                {
+                    again = false;
+                    Environment.Exit(0);
+                }
             }
 
         }
+
     }
 }
+
