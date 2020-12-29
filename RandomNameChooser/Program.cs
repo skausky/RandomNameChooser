@@ -13,19 +13,20 @@ namespace RandomNameChooser
 
             while (again)
             {
-                for (int i = 0; i < 3; i++)
+                Console.WriteLine("Seziure attack!");
+                Thread.Sleep(2000);
+                Console.Clear();
+                for (int i = 0; i < 10; i++)
                 {
-                    Console.Write("How many names: ", Color.Aqua);
-                    Thread.Sleep(100);
+                    Console.BackgroundColor = Color.White;
                     Console.Clear();
-                    Console.Write("How many names: ", Color.Pink);
-                    Thread.Sleep(100);
+                    
+                    Console.BackgroundColor = Color.Black;
                     Console.Clear();
-
-
+                   
                 }
+                Console.BackgroundColor = Color.Black;
                 Console.WriteLine(DateTime.Now.ToString("[hh:mm:ss]"), Color.Pink);
-
                 Console.Write("How many names: ", Color.Pink);
                 int amountNames = Convert.ToInt32(Console.ReadLine());
                 string[] names = new string[amountNames];
@@ -58,6 +59,7 @@ namespace RandomNameChooser
                 else
                 {
                     again = false;
+                    Console.WriteLine("Goodbye");
                     Environment.Exit(0);
                 }
             }
